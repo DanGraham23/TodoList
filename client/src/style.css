@@ -28,6 +28,90 @@ footer{
     bottom: 0;
 }
 
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--primary-light-gray);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--primary-bright-purple);
+  }
+
+.create-todo-item-modal{
+    width: 300px;
+    height: 250px;
+    border-radius: 18px;
+    padding: 10px;
+    position: absolute;
+    z-index: 2;
+    top: 35%;
+    left: 40%;
+    background-color: var(--primary-dark-gray);
+    display: none;
+}
+
+.create-todo-item-modal__title{
+    background: none;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--primary-light-gray);
+    color: var(--primary-light-gray);
+    height: 15%;
+    text-indent: 15px;
+}
+
+.create-todo-item-modal__title::placeholder{
+    color: var(--primary-light-gray);
+}
+
+.create-todo-item-modal__description{
+    border: 1px solid var(--primary-light-gray);
+    color: var(--primary-light-gray);
+    font-family: inherit;
+    outline: none;
+    background: none;
+    height: 50%;
+    width: 90%;
+    text-indent: 15px;
+    margin-top: 5%;
+}
+
+.create-todo-item-modal__description::placeholder{
+    color: var(--primary-light-gray);
+}
+
+.create-todo-item-modal__btn{
+    border: none;
+    outline: none;
+    width: 125px;
+    height: 40px;
+    background-color: var(--primary-bright-purple);
+    color: var(--primary-light-gray);
+}
+
+.create-todo-item-modal__btn:hover{
+    background-color: var(--primary-light-gray);
+    color: var(--primary-bright-purple);
+    border: 2px solid var(--primary-bright-purple);
+    cursor: pointer;
+}
+
+.create-todo-item-modal-overlay{
+    display: none;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 .main{
     margin-left: auto;
     margin-right: auto;
@@ -85,15 +169,17 @@ footer{
     width: 90%;
     height: 550px;
     gap: 10px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .todo-items__item{
     flex-basis: 30%;
+    max-width: 30%;
     height: 250px;
     background-color: var(--primary-dark-gray);
     border-radius: 18px;
-    padding: 10px
+    padding: 10px;  
+    word-wrap: break-word;
 }
 
 .todo-items__item:hover{
@@ -106,6 +192,7 @@ footer{
 
 .todo-items__item__description{
     height: 45%;
+    overflow-y: auto;
 }
 
 .todo-items__item__date{
